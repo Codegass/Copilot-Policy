@@ -1,0 +1,13 @@
+{
+  "extends": "simulated.json",
+  "machine": "yam-local",
+  "backend": "yam",
+  "camera_backend": "realsense",
+  "runtime": {"robot_model": "YAM", "interface": "can0", "right_interface": "can1"},
+  "robot": {"gripper_type": "LINEAR_4310", "gripper_width_m": 0.095},
+  "cameras": {
+    "left": {"serial": "REPLACE_WITH_LEFT_SERIAL", "role": "left wrist RGB"},
+    "right": {"serial": "REPLACE_WITH_RIGHT_SERIAL", "role": "right wrist RGB"},
+    "top": {"serial": "REPLACE_WITH_TOP_SERIAL", "role": "overhead RGB"}
+  }
+}

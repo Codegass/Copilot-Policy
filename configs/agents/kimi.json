@@ -1,0 +1,7 @@
+{
+  "model": "kimi-k3[1m]",
+  "executable": "claude",
+  "effort": "medium",
+  "timeout_s": 180,
+  "settings_file": "~/.claude-volcengine/settings.json"
+}

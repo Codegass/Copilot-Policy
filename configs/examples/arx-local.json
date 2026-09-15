@@ -1,0 +1,10 @@
+{
+  "extends": "simulated.json",
+  "machine": "arx-local",
+  "runtime": {"interface": "can0", "right_interface": "can1"},
+  "cameras": {
+    "left": {"device": "/dev/video-left", "role": "left wrist RGB"},
+    "right": {"device": "/dev/video-right", "role": "right wrist RGB"},
+    "top": {"device": "/dev/video-top", "role": "overhead RGB"}
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "model": "claude-fable-5-1[1m]",
+  "executable": "claude",
+  "effort": "medium",
+  "timeout_s": 180,
+  "settings_file": "~/.claude/settings.json"
+}

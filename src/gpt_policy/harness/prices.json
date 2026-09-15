@@ -1,0 +1,25 @@
+{
+  "checked_on": "2026-09-12",
+  "currency": "USD",
+  "basis": "official_standard_api_equivalent_not_account_bill",
+  "models": {
+    "gpt-6-astra": {
+      "input": 10.0, "cached_input": 1.0, "cache_write_input": 12.5, "output": 50.0,
+      "long_context_threshold": 272000, "long_input_multiplier": 2.0, "long_output_multiplier": 1.5,
+      "source": "https://developers.openai.com/api/docs/models/gpt-6-astra"
+    },
+    "gpt-5.3-codex-spark": {
+      "unavailable_reason": "research_preview_no_published_token_price",
+      "source": "https://learn.chatgpt.com/docs/pricing"
+    },
+    "claude-fable-5-1": {
+      "input": 10.0, "cached_input": 0.25, "cache_write_input": 12.5,
+      "cache_write_1h_input": 20.0, "output": 50.0,
+      "source": "https://platform.claude.com/docs/en/about-claude/pricing"
+    },
+    "kimi-k3": {
+      "input": 3.0, "cached_input": 0.3, "output": 15.0,
+      "source": "https://forum.moonshot.ai/t/kimi-k3-is-here-our-most-capable-model/480"
+    }
+  }
+}

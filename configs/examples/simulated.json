@@ -1,0 +1,36 @@
+{
+  "machine": "simulated",
+  "agent": "codex",
+  "agent_config_dir": "..",
+  "backend": "arx",
+  "tool_catalog": "configs/tools.json",
+  "runtime": {
+    "robot_model": "X5",
+    "interface": "can-left",
+    "right_interface": null,
+    "gripper_open_readout": -3.4,
+    "camera_width": 640,
+    "camera_height": 480,
+    "convert_camera_images_to_jpeg": true,
+    "camera_jpeg_quality": 85,
+    "trajectory_hz": 100.0,
+    "task_name": "example",
+    "record_dir": null,
+    "input_json": null
+  },
+  "robot": {"gravity_compensation": true, "gripper_width_m": 0.088},
+  "motion": {},
+  "recording": {"fps": 10, "jpeg_quality": 75, "state_hz": 20},
+  "cameras": {},
+  "scene": {"safety_notes": []},
+  "vision": {
+    "camera_intrinsics": {},
+    "distortion_coefficients": {}
+  },
+  "calibration": {
+    "link6_from_sdk_eef": [[1,0,0,0],[0,1,0,0],[0,0,1,0],[0,0,0,1]],
+    "link6_from_tcp": [[1,0,0,0],[0,1,0,0],[0,0,1,0],[0,0,0,1]],
+    "link6_from_camera": {},
+    "base_from_camera": {}
+  }
+}
