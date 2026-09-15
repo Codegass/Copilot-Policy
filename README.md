@@ -11,9 +11,9 @@
 This repository is the public implementation of GPT-Policy, a closed-loop control framework that connects a fixed vision-language model (VLM) to robot tools. At deployment time, the agent can use demonstrations, goal images, interaction history, and execution feedback without gradient updates or task-specific parameter changes.
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
-[![Paper project](https://img.shields.io/badge/paper%20project-GPT--Policy-EA4C89)](https://github.com/cheng-haha/GPT-Policy-Eval)
+[![Project website](https://img.shields.io/badge/website-GPT--Policy-EA4C89)](https://cheng-haha.github.io/GPT-Policy/)
 
-**Paper:** *In-Context Robot Learning with VLM Agents*  \
+**Paper:** [*In-Context Robot Learning with VLM Agents*](docs/GPT-Policy.pdf)  \
 **Authors:** Dongzhou Cheng, Taoran Yi, Ye Fang, Xingwu Zhang, Fan Feng, Yixuan Li, Gengxiong Zhuang, Rongze Wang, Shuai Yang, Wei Song, Weizhi Xue, Minyan Wu, Jie Gui, Jiaqi Wang, and Tong Wu.
 
 <details>
@@ -27,11 +27,11 @@ Robots must adapt to tasks and environments that cannot be exhaustively covered 
 Plug insertion with synchronized top and right wrist views: the robot grasps the plug, aligns it with the power strip, inserts it, and releases it while adjusting through contact.
 
 <p align="center">
-  <a href="https://github.com/cheng-haha/GPT-Policy-Eval/raw/refs/heads/main/docs/assets/plug-insertion-top-and-right-wrist.mp4">
+  <a href="https://github.com/cheng-haha/GPT-Policy/raw/refs/heads/main/docs/assets/plug-insertion-top-and-right-wrist.mp4">
     <img src="docs/assets/plug-insertion-top-and-right-wrist.gif" alt="Synchronized plug insertion: top view on the left and right wrist view on the right." width="960" />
   </a>
   <br />
-  <sub>Left: top view · Right: right wrist view · 12× playback · <a href="https://github.com/cheng-haha/GPT-Policy-Eval/raw/refs/heads/main/docs/assets/plug-insertion-top-and-right-wrist.mp4">Download MP4 ↗</a></sub>
+  <sub>Left: top view · Right: right wrist view · 12× playback · <a href="https://github.com/cheng-haha/GPT-Policy/raw/refs/heads/main/docs/assets/plug-insertion-top-and-right-wrist.mp4">Download MP4 ↗</a></sub>
 </p>
 
 ## Method overview
@@ -141,7 +141,7 @@ See [THIRD_PARTY.md](THIRD_PARTY.md) for third-party notices and optional SDK so
   title        = {In-Context Robot Learning with VLM Agents},
   author       = {Cheng, Dongzhou and Yi, Taoran and Fang, Ye and Zhang, Xingwu and Feng, Fan and Li, Yixuan and Zhuang, Gengxiong and Wang, Rongze and Yang, Shuai and Song, Wei and Xue, Weizhi and Wu, Minyan and Gui, Jie and Wang, Jiaqi and Wu, Tong},
   year         = {2026},
-  howpublished = {\url{https://github.com/cheng-haha/GPT-Policy-Eval}}
+  howpublished = {\url{https://github.com/cheng-haha/GPT-Policy}}
 }
 ```
 
