@@ -24,12 +24,15 @@ Robots must adapt to tasks and environments that cannot be exhaustively covered 
 
 ## Demo
 
-The teaser above summarizes the supported context types. Qualitative execution sequences are shown below.
+Plug insertion with synchronized top and right wrist views: the robot grasps the plug, aligns it with the power strip, inserts it, and releases it while adjusting through contact.
 
-<div align="center">
-  <img src="docs/assets/human-video-results.png" alt="Human video demonstrations and robot executions" width="49%" />
-  <img src="docs/assets/robot-video-results.png" alt="Robot video and action-reference executions" width="49%" />
-</div>
+<p align="center">
+  <a href="https://github.com/cheng-haha/GPT-Policy-Eval/raw/refs/heads/main/docs/assets/plug-insertion-top-and-right-wrist.mp4">
+    <img src="docs/assets/plug-insertion-top-and-right-wrist.gif" alt="Synchronized plug insertion: top view on the left and right wrist view on the right." width="960" />
+  </a>
+  <br />
+  <sub>Left: top view · Right: right wrist view · 12× playback · <a href="https://github.com/cheng-haha/GPT-Policy-Eval/raw/refs/heads/main/docs/assets/plug-insertion-top-and-right-wrist.mp4">Download MP4 ↗</a></sub>
+</p>
 
 ## Method overview
 
