@@ -24,34 +24,34 @@ Robots must adapt to tasks and environments that cannot be exhaustively covered 
 
 ## Demo gallery
 
-These representative recordings show the same policy across contact-rich manipulation, visual demonstrations, and spatial arrangement tasks. The videos can be played directly in the gallery. The larger recordings are kept on the `page` branch so the source repository stays lightweight.
+These representative recordings show the same policy across contact-rich manipulation, visual demonstrations, and spatial arrangement tasks. The videos can be played directly in the gallery. The gallery uses short five-second previews; the full-length recordings remain available on the `page` branch.
 
 <table>
   <tr>
     <td align="center" width="33%">
-      <video controls muted loop playsinline preload="metadata" width="100%" src="https://github.com/cheng-haha/GPT-Policy-Eval/raw/refs/heads/page/assets/videos/towel-with-demo.mp4"></video>
+      <video controls muted loop playsinline preload="metadata" width="100%" src="docs/assets/towel-with-demo-5s.mp4"></video>
       <br /><sub><b>Towel pickup</b><br />Human demonstration</sub>
     </td>
     <td align="center" width="33%">
-      <video controls muted loop playsinline preload="metadata" width="100%" src="https://github.com/cheng-haha/GPT-Policy-Eval/raw/refs/heads/page/assets/videos/glue-with-demo.mp4"></video>
+      <video controls muted loop playsinline preload="metadata" width="100%" src="docs/assets/glue-with-demo-5s.mp4"></video>
       <br /><sub><b>Glue placement</b><br />Human demonstration</sub>
     </td>
     <td align="center" width="33%">
-      <video controls muted loop playsinline preload="metadata" width="100%" src="https://github.com/cheng-haha/GPT-Policy-Eval/raw/refs/heads/page/assets/videos/blocks-t.mp4"></video>
+      <video controls muted loop playsinline preload="metadata" width="100%" src="docs/assets/blocks-t-5s.mp4"></video>
       <br /><sub><b>Block arrangement</b><br />T-shape task</sub>
     </td>
   </tr>
   <tr>
     <td align="center" width="33%">
-      <video controls muted loop playsinline preload="metadata" width="100%" src="https://github.com/cheng-haha/GPT-Policy-Eval/raw/refs/heads/page/assets/videos/fruit-layout.mp4"></video>
+      <video controls muted loop playsinline preload="metadata" width="100%" src="docs/assets/fruit-layout-5s.mp4"></video>
       <br /><sub><b>Fruit arrangement</b><br />Spatial layout task</sub>
     </td>
     <td align="center" width="33%">
-      <video controls muted loop playsinline preload="metadata" width="100%" src="https://github.com/cheng-haha/GPT-Policy-Eval/raw/refs/heads/page/assets/experiments/bottle-astra-video-r2.mp4"></video>
+      <video controls muted loop playsinline preload="metadata" width="100%" src="docs/assets/bottle-astra-video-r2-5s.mp4"></video>
       <br /><sub><b>Bottle opening</b><br />Robot video context</sub>
     </td>
     <td align="center" width="33%">
-      <video controls muted loop playsinline preload="metadata" width="100%" src="https://github.com/cheng-haha/GPT-Policy-Eval/raw/refs/heads/page/assets/experiments/notebook-astra-human-r1.mp4"></video>
+      <video controls muted loop playsinline preload="metadata" width="100%" src="docs/assets/notebook-astra-human-r1-5s.mp4"></video>
       <br /><sub><b>Notebook pickup</b><br />Human video context</sub>
     </td>
   </tr>
@@ -130,7 +130,36 @@ Each motion is planned from fresh feedback, checked with per-sample IK, and reco
 
 ## Results from the paper
 
-The paper repeats each condition three times. Human Video improves towel and notebook pickup from `0/3` without context to `2/3`; Robot Video + Action reaches `3/3` on bottle opening and `2/3` on plug reinsertion. Target Image, Self History, and Human-Robot Interaction each achieve `3/3` on the reported tasks. These results measure task outcomes in selected trials and do not certify safe autonomous deployment.
+<div align="center">
+  <table>
+    <tr>
+      <td align="center" width="42%">
+        <h1>6 / 6</h1>
+        <b>context-driven tasks reached 3/3</b><br />
+        goal image · self history · human–robot interaction
+      </td>
+      <td align="center" width="29%">
+        <h1>0 → 2/3</h1>
+        <b>human video</b><br />
+        towel &amp; notebook pickup
+      </td>
+      <td align="center" width="29%">
+        <h1>0 → 3/3</h1>
+        <b>robot video + action</b><br />
+        bottle opening
+      </td>
+    </tr>
+  </table>
+
+  <p><b>One fixed VLM. New evidence at deployment. Physical behavior that adapts.</b></p>
+</div>
+
+The same agent uses demonstrations, target images, interaction history, and live human feedback without gradient updates or task-specific parameter changes. Human Video supplies no robot action labels; the agent infers robot-specific motions from the current scene. Robot Video + Action also reaches `2/3` on plug reinsertion. Each condition is repeated three times; these selected real-robot trials do not certify safe autonomous deployment.
+
+<div align="center">
+  <img src="docs/assets/human-video-results.png" alt="Human video context transferred to robot execution" width="49%" />
+  <img src="docs/assets/robot-video-results.png" alt="Robot video and action context transferred to robot execution" width="49%" />
+</div>
 
 ## Repository layout
 
