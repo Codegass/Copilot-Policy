@@ -1,0 +1,12 @@
+{
+  "extends": "examples/arx-local.json",
+  "machine": "arx-local-default",
+  "agent": "codex",
+  "agent_config_dir": "agents",
+  "tool_catalog": "tools.json",
+  "runtime": {
+    "task_name": "task",
+    "record_dir": null,
+    "input_json": null
+  }
+}
