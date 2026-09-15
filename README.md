@@ -1,4 +1,8 @@
 <div align="center">
+  <img src="docs/assets/gpt-policy-wordmark-v1.png" alt="GPT-Policy wordmark" width="720" />
+</div>
+
+<div align="center">
   <img src="docs/assets/gpt-policy-teaser.png" alt="GPT-Policy overview" width="100%" />
 </div>
 
