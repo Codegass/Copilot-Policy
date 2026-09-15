@@ -11,9 +11,9 @@
 This repository is the public implementation of GPT-Policy, a closed-loop control framework that connects a fixed vision-language model (VLM) to robot tools. At deployment time, the agent can use demonstrations, goal images, interaction history, and execution feedback without gradient updates or task-specific parameter changes.
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
-[![Project website](https://img.shields.io/badge/website-GPT--Policy-EA4C89)](https://cheng-haha.github.io/GPT-Policy/)
+[![Paper project](https://img.shields.io/badge/paper%20project-GPT--Policy-EA4C89)](https://github.com/cheng-haha/GPT-Policy-Eval)
 
-**Paper:** [*In-Context Robot Learning with VLM Agents*](docs/GPT-Policy.pdf)  \
+**Paper:** *In-Context Robot Learning with VLM Agents*  \
 **Authors:** Dongzhou Cheng, Taoran Yi, Ye Fang, Xingwu Zhang, Fan Feng, Yixuan Li, Gengxiong Zhuang, Rongze Wang, Shuai Yang, Wei Song, Weizhi Xue, Minyan Wu, Jie Gui, Jiaqi Wang, and Tong Wu.
 
 <details>
@@ -22,17 +22,42 @@ This repository is the public implementation of GPT-Policy, a closed-loop contro
 Robots must adapt to tasks and environments that cannot be exhaustively covered by a finite training set. GPT-Policy studies whether a general-purpose VLM can learn from demonstrations, examples, and interaction feedback, then produce executable and verifiable robot behavior from a new initial state. A context compiler preserves task-relevant visual transitions, the VLM proposes structured robot-tool actions, and a constrained controller verifies, executes, and reports each action. The paper evaluates human and robot demonstrations, goal images, self-interaction history, and online human-robot interaction in real-robot tasks, while documenting the remaining gap between task reasoning, contact execution, outcome verification, and physical safety.
 </details>
 
-## Demo
+## Demo gallery
 
-Plug insertion with synchronized top and right wrist views: the robot grasps the plug, aligns it with the power strip, inserts it, and releases it while adjusting through contact.
+These representative recordings show the same policy across contact-rich manipulation, visual demonstrations, and spatial arrangement tasks. The videos can be played directly in the gallery. The larger recordings are kept on the `page` branch so the source repository stays lightweight.
 
-<p align="center">
-  <a href="https://github.com/cheng-haha/GPT-Policy/raw/refs/heads/main/docs/assets/plug-insertion-top-and-right-wrist.mp4">
-    <img src="docs/assets/plug-insertion-top-and-right-wrist.gif" alt="Synchronized plug insertion: top view on the left and right wrist view on the right." width="960" />
-  </a>
-  <br />
-  <sub>Left: top view · Right: right wrist view · 12× playback · <a href="https://github.com/cheng-haha/GPT-Policy/raw/refs/heads/main/docs/assets/plug-insertion-top-and-right-wrist.mp4">Download MP4 ↗</a></sub>
-</p>
+<table>
+  <tr>
+    <td align="center" width="33%">
+      <video controls muted loop playsinline preload="metadata" width="100%" src="https://github.com/cheng-haha/GPT-Policy-Eval/raw/refs/heads/page/assets/videos/towel-with-demo.mp4"></video>
+      <br /><sub><b>Towel pickup</b><br />Human demonstration</sub>
+    </td>
+    <td align="center" width="33%">
+      <video controls muted loop playsinline preload="metadata" width="100%" src="https://github.com/cheng-haha/GPT-Policy-Eval/raw/refs/heads/page/assets/videos/glue-with-demo.mp4"></video>
+      <br /><sub><b>Glue placement</b><br />Human demonstration</sub>
+    </td>
+    <td align="center" width="33%">
+      <video controls muted loop playsinline preload="metadata" width="100%" src="https://github.com/cheng-haha/GPT-Policy-Eval/raw/refs/heads/page/assets/videos/blocks-t.mp4"></video>
+      <br /><sub><b>Block arrangement</b><br />T-shape task</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="33%">
+      <video controls muted loop playsinline preload="metadata" width="100%" src="https://github.com/cheng-haha/GPT-Policy-Eval/raw/refs/heads/page/assets/videos/fruit-layout.mp4"></video>
+      <br /><sub><b>Fruit arrangement</b><br />Spatial layout task</sub>
+    </td>
+    <td align="center" width="33%">
+      <video controls muted loop playsinline preload="metadata" width="100%" src="https://github.com/cheng-haha/GPT-Policy-Eval/raw/refs/heads/page/assets/experiments/bottle-astra-video-r2.mp4"></video>
+      <br /><sub><b>Bottle opening</b><br />Robot video context</sub>
+    </td>
+    <td align="center" width="33%">
+      <video controls muted loop playsinline preload="metadata" width="100%" src="https://github.com/cheng-haha/GPT-Policy-Eval/raw/refs/heads/page/assets/experiments/notebook-astra-human-r1.mp4"></video>
+      <br /><sub><b>Notebook pickup</b><br />Human video context</sub>
+    </td>
+  </tr>
+</table>
+
+The full set of recordings, including no-context and reference conditions, is available under [`assets/videos/`](https://github.com/cheng-haha/GPT-Policy-Eval/tree/page/assets/videos) and [`assets/experiments/`](https://github.com/cheng-haha/GPT-Policy-Eval/tree/page/assets/experiments).
 
 ## Method overview
 
@@ -141,7 +166,7 @@ See [THIRD_PARTY.md](THIRD_PARTY.md) for third-party notices and optional SDK so
   title        = {In-Context Robot Learning with VLM Agents},
   author       = {Cheng, Dongzhou and Yi, Taoran and Fang, Ye and Zhang, Xingwu and Feng, Fan and Li, Yixuan and Zhuang, Gengxiong and Wang, Rongze and Yang, Shuai and Song, Wei and Xue, Weizhi and Wu, Minyan and Gui, Jie and Wang, Jiaqi and Wu, Tong},
   year         = {2026},
-  howpublished = {\url{https://github.com/cheng-haha/GPT-Policy}}
+  howpublished = {\url{https://github.com/cheng-haha/GPT-Policy-Eval}}
 }
 ```
 
