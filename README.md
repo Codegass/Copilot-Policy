@@ -49,16 +49,18 @@ Python 3.10 or newer is required.
 
 ```bash
 python -m venv .venv
-.venv/bin/python -m pip install -e .
+source .venv/bin/activate
+python -m pip install -e .
 ```
 
 The base install is hardware-free. Install only the backend you need:
 
 ```bash
-.venv/bin/python scripts/install_drivers.py arx
-.venv/bin/python scripts/install_drivers.py yam
-.venv/bin/python scripts/install_drivers.py realsense
-# or: .venv/bin/python -m pip install -e '.[arx,realsense]'
+source .venv/bin/activate
+python scripts/install_drivers.py arx
+python scripts/install_drivers.py yam
+python scripts/install_drivers.py realsense
+# or: python -m pip install -e '.[arx,realsense]'
 ```
 
 Agent CLIs are external dependencies. Install and authenticate the provider you select; credentials are stored outside this repository.
@@ -68,13 +70,14 @@ Agent CLIs are external dependencies. Install and authenticate the provider you 
 For the default ARX profile, edit the placeholders in `configs/arx_gpt.json` once, then run a task directly:
 
 ```bash
-.venv/bin/gpt-policy "pick up the red block"
+source .venv/bin/activate
+gpt-policy "pick up the red block"
 ```
 
 The command resolves `configs/arx_gpt.json` automatically. To validate the profile without opening hardware or a model session:
 
 ```bash
-.venv/bin/gpt-policy --check
+gpt-policy --check
 ```
 
 For another machine or provider, pass an explicit profile:
@@ -82,13 +85,13 @@ For another machine or provider, pass an explicit profile:
 ```bash
 cp configs/examples/yam-local.json configs/my-machine.json
 # edit interfaces, camera serials, and measured calibration
-.venv/bin/gpt-policy --config configs/my-machine.json "pick up the red block"
+gpt-policy --config configs/my-machine.json "pick up the red block"
 ```
 
 An input package can contain text, images, videos, or reviewed demonstrations:
 
 ```bash
-.venv/bin/gpt-policy --input-json task.json
+gpt-policy --input-json task.json
 ```
 
 Each motion is planned from fresh feedback, checked with per-sample IK, and recorded as an append-only run directory. `Ctrl+C` requests software cancellation and cleanup; it does not replace a hardware emergency stop.
@@ -114,8 +117,8 @@ The public tree excludes deployment hosts, private prompts, real credentials, ru
 ## Development
 
 ```bash
-.venv/bin/python -m pytest -q
-.venv/bin/python -m compileall -q src
+python -m pytest -q
+python -m compileall -q src
 ```
 
 ## Limitations and safety
