@@ -148,9 +148,9 @@ python -m compileall -q src
 ## TODO
 
 - [x] Release the GPT-Policy pipeline for real-world ARX robots, including the complete harness and format adapters for different context types.
-- [ ] Release the GPT-Policy pipeline for YAM robots.
-- [ ] Release the GPT-Policy simulation pipeline.
-- [ ] Optimize the harness.
+- [ ] Release the GPT-Policy pipeline for YAM robots, including hardware integration, deployment configurations, and support for different context types.
+- [ ] Release the GPT-Policy simulation pipeline in RoboDojo, enabling reproducible task evaluation and systematic comparisons across different context settings.
+- [ ] Refine the agent harness to improve context construction, feedback-driven action planning, and execution efficiency throughout the closed-loop control process.
 
 ## Limitations and safety
 
