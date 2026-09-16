@@ -147,12 +147,10 @@ python -m compileall -q src
 
 ## TODO
 
-- [ ] Broaden support for robot platforms and hardware interfaces.
-- [ ] Improve execution robustness, recovery behavior, and operational diagnostics.
-- [ ] Strengthen testing and reproducibility across supported configurations.
-- [ ] Improve documentation, examples, and the onboarding workflow.
-- [ ] Expand simulation and evaluation tooling for development without hardware.
-- [ ] Simplify deployment and maintenance of the agent and robot adapters.
+- [x] Release the GPT-Policy pipeline for real-world ARX robots, including the complete harness and format adapters for different context types.
+- [ ] Release the GPT-Policy pipeline for YAM robots.
+- [ ] Release the GPT-Policy simulation pipeline.
+- [ ] Optimize the harness.
 
 ## Limitations and safety
 
