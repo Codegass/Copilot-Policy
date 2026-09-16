@@ -26,8 +26,8 @@ Enabling robots to adapt to unfamiliar environments as readily as humans remains
 
 ## News
 
-- 🎥 **[2026/09/15]** The first robot cases and demonstrations were added to the project page!
 - 🚀 **[2026/09/16]** The [paper](https://cheng-haha.github.io/GPT-Policy/paper.pdf?v=20260915-repository-rename), [project page](https://cheng-haha.github.io/GPT-Policy/), and [code](https://github.com/cheng-haha/GPT-Policy-Eval) are now publicly available!
+- 🎥 **[2026/09/11]** The first robot cases and demonstrations were added to the project page!
 
 ## Demos
 
