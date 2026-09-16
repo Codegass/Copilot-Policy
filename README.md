@@ -13,51 +13,39 @@ This repository is the public implementation of GPT-Policy, a closed-loop contro
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
 [![Paper project](https://img.shields.io/badge/paper%20project-GPT--Policy-EA4C89)](https://github.com/cheng-haha/GPT-Policy-Eval)
 
-**Paper:** *In-Context Robot Learning with VLM Agents*  \
+**Paper:** [*In-Context Robot Learning with VLM Agents*](https://github.com/cheng-haha/GPT-Policy-Eval/blob/main/docs/GPT-Policy.pdf)  \
 **Authors:** Dongzhou Cheng, Taoran Yi, Ye Fang, Xingwu Zhang, Fan Feng, Yixuan Li, Gengxiong Zhuang, Rongze Wang, Shuai Yang, Wei Song, Weizhi Xue, Minyan Wu, Jie Gui, Jiaqi Wang, and Tong Wu.
 
 <details>
 <summary>Abstract</summary>
 
-Robots must adapt to tasks and environments that cannot be exhaustively covered by a finite training set. GPT-Policy studies whether a general-purpose VLM can learn from demonstrations, examples, and interaction feedback, then produce executable and verifiable robot behavior from a new initial state. A context compiler preserves task-relevant visual transitions, the VLM proposes structured robot-tool actions, and a constrained controller verifies, executes, and reports each action. The paper evaluates human and robot demonstrations, goal images, self-interaction history, and online human-robot interaction in real-robot tasks, while documenting the remaining gap between task reasoning, contact execution, outcome verification, and physical safety.
+Enabling robots to adapt to unfamiliar environments as readily as humans remains a moonshot goal of embodied AI. No finite collection of demonstrations can cover every task and situation a robot will encounter, making the ability to learn from context at deployment essential for generalization. Such in-context learning (ICL), however, remains largely beyond the reach of existing robotic policies. The broad agentic capabilities of commercial vision-language models (VLMs), such as GPT-6 Astra, raise a compelling question: can these models learn from demonstrations, examples, and interaction feedback, then translate that information into executable and verifiable robot behavior from a new initial state without gradient updates or persistent changes to task-specific parameters? We introduce GPT-Policy, a general-agent framework for in-context robot learning. GPT-Policy integrates a context compiler that preserves task-relevant visual transitions, a VLM that proposes robot-tool actions, and a constrained controller that verifies and executes each action and reports its outcome. We evaluate its reliability and limitations through task success and efficiency metrics, matched comparisons across models, and controlled context ablations. In real-robot trials, human video demonstrations improve task completion even without robot action labels, while aligned action references yield further gains on contact-sensitive tasks. These findings position GPT-Policy as a step toward robot adaptation through in-context learning, providing an empirical foundation for translating the general-purpose capabilities of VLMs into physical behavior and clarifying the challenges that must be overcome for reliable deployment.
 </details>
 
-## Demo gallery
+## News
 
-These representative recordings show the same policy across contact-rich manipulation, visual demonstrations, and spatial arrangement tasks. The videos can be played directly in the gallery. The gallery uses short five-second previews; the full-length recordings remain available on the `page` branch.
+- 🎥 **[2026/09/15]** The first robot cases and demonstrations were added to the project page!
+- 🚀 **[2026/09/16]** The [paper](https://cheng-haha.github.io/GPT-Policy/paper.pdf?v=20260915-repository-rename), [project page](https://cheng-haha.github.io/GPT-Policy/), and [code](https://github.com/cheng-haha/GPT-Policy-Eval) are now publicly available!
 
-<table>
-  <tr>
-    <td align="center" width="33%">
-      <video controls muted loop playsinline preload="metadata" width="100%" src="docs/assets/towel-with-demo-5s.mp4"></video>
-      <br /><sub><b>Towel pickup</b><br />Human demonstration</sub>
-    </td>
-    <td align="center" width="33%">
-      <video controls muted loop playsinline preload="metadata" width="100%" src="docs/assets/glue-with-demo-5s.mp4"></video>
-      <br /><sub><b>Glue placement</b><br />Human demonstration</sub>
-    </td>
-    <td align="center" width="33%">
-      <video controls muted loop playsinline preload="metadata" width="100%" src="docs/assets/blocks-t-5s.mp4"></video>
-      <br /><sub><b>Block arrangement</b><br />T-shape task</sub>
-    </td>
-  </tr>
-  <tr>
-    <td align="center" width="33%">
-      <video controls muted loop playsinline preload="metadata" width="100%" src="docs/assets/fruit-layout-5s.mp4"></video>
-      <br /><sub><b>Fruit arrangement</b><br />Spatial layout task</sub>
-    </td>
-    <td align="center" width="33%">
-      <video controls muted loop playsinline preload="metadata" width="100%" src="docs/assets/bottle-astra-video-r2-5s.mp4"></video>
-      <br /><sub><b>Bottle opening</b><br />Robot video context</sub>
-    </td>
-    <td align="center" width="33%">
-      <video controls muted loop playsinline preload="metadata" width="100%" src="docs/assets/notebook-astra-human-r1-5s.mp4"></video>
-      <br /><sub><b>Notebook pickup</b><br />Human video context</sub>
-    </td>
-  </tr>
-</table>
+## Demos
 
-The full set of recordings, including no-context and reference conditions, is available under [`assets/videos/`](https://github.com/cheng-haha/GPT-Policy-Eval/tree/page/assets/videos) and [`assets/experiments/`](https://github.com/cheng-haha/GPT-Policy-Eval/tree/page/assets/experiments).
+Four synchronized views of three GPT-6 Astra robot runs. Click any preview to open its MP4.
+
+<p align="center">
+  <a href="docs/assets/plug-insertion-top-and-right-wrist.mp4"><img src="assets/videos/plug-top-view-preview.gif" alt="Plug insertion from top camera" width="48%" /></a>
+  <a href="docs/assets/plug-insertion-top-and-right-wrist.mp4"><img src="assets/videos/plug-right-wrist-view-preview.gif" alt="Plug insertion from right wrist camera" width="48%" /></a>
+  <br />
+  <sub><b>Plug insertion · top view</b> &nbsp;&nbsp;&nbsp;&nbsp; <b>Plug insertion · right wrist view</b></sub>
+</p>
+
+<p align="center">
+  <a href="assets/videos/gpt6-sprite-retrieval-5s.mp4"><img src="assets/videos/gpt6-sprite-retrieval-preview.gif" alt="Robot retrieving Sprite bottle" width="48%" /></a>
+  <a href="assets/videos/gpt6-bottle-opening-5s.mp4"><img src="assets/videos/gpt6-bottle-opening-preview.gif" alt="Robot unscrewing a bottle cap" width="48%" /></a>
+  <br />
+  <sub><b>Sprite retrieval</b> · search and place the bottle &nbsp;&nbsp;&nbsp;&nbsp; <b>Bottle opening</b> · unscrew and separate the cap</sub>
+</p>
+
+The [full experiment gallery](https://cheng-haha.github.io/GPT-Policy-Eval/#results) includes the other tasks and context comparisons.
 
 ## Method overview
 
@@ -130,36 +118,9 @@ Each motion is planned from fresh feedback, checked with per-sample IK, and reco
 
 ## Results from the paper
 
-<div align="center">
-  <table>
-    <tr>
-      <td align="center" width="42%">
-        <h1>6 / 6</h1>
-        <b>context-driven tasks reached 3/3</b><br />
-        goal image · self history · human–robot interaction
-      </td>
-      <td align="center" width="29%">
-        <h1>0 → 2/3</h1>
-        <b>human video</b><br />
-        towel &amp; notebook pickup
-      </td>
-      <td align="center" width="29%">
-        <h1>0 → 3/3</h1>
-        <b>robot video + action</b><br />
-        bottle opening
-      </td>
-    </tr>
-  </table>
-
-  <p><b>One fixed VLM. New evidence at deployment. Physical behavior that adapts.</b></p>
-</div>
-
-The same agent uses demonstrations, target images, interaction history, and live human feedback without gradient updates or task-specific parameter changes. Human Video supplies no robot action labels; the agent infers robot-specific motions from the current scene. Robot Video + Action also reaches `2/3` on plug reinsertion. Each condition is repeated three times; these selected real-robot trials do not certify safe autonomous deployment.
-
-<div align="center">
-  <img src="docs/assets/human-video-results.png" alt="Human video context transferred to robot execution" width="49%" />
-  <img src="docs/assets/robot-video-results.png" alt="Robot video and action context transferred to robot execution" width="49%" />
-</div>
+<p>🎯 <b>Structured context:</b> 100% success across reported tasks.</p>
+<p>👀 <b>Human Video:</b> 0% → 67% on towel and notebook pickup.</p>
+<p>🤖 <b>Robot Video + Action:</b> 0% → 100% on bottle opening.</p>
 
 ## Repository layout
 
@@ -182,6 +143,15 @@ python -m pytest -q
 python -m compileall -q src
 ```
 
+## TODO
+
+- [ ] Add a dedicated safety layer for bimanual collision checking, separation monitoring, and interruption.
+- [ ] Make the execution harness contact-aware with slip detection, force limits, and local recovery.
+- [ ] Pair deliberative context reasoning with a fast controller for pose refinement and bimanual coordination.
+- [ ] Extend the agent to mobile manipulation with active perception, spatial memory, and base-arm coordination.
+- [ ] Study compositional context for long-horizon tasks and multi-demonstration subskill sequencing.
+- [ ] Adapt online to physical dynamics such as friction, compliance, and object response.
+
 ## Limitations and safety
 
 This is a research control loop. The integrator must verify calibration, workspace limits, collision behavior, camera placement, provider configuration, and emergency-stop procedures before energizing a robot. IK acceptance and a model completion message do not establish collision-free motion or physical task success. The project license is intentionally pending; redistribution and commercial use are not granted by this preview.
@@ -201,4 +171,4 @@ See [THIRD_PARTY.md](THIRD_PARTY.md) for third-party notices and optional SDK so
 
 ## Acknowledgements
 
-GPT-Policy integrates optional ARX, I2RT/YAM, RealSense, and provider CLI interfaces. Please see [THIRD_PARTY.md](THIRD_PARTY.md) before redistributing a deployment that includes external SDKs.
+GPT-Policy integrates optional ARX, I2RT/YAM, RealSense, and provider CLI interfaces, with reference to [RoboCurve's inspect-robots project](https://github.com/robocurve/inspect-robots). Please see [THIRD_PARTY.md](THIRD_PARTY.md) before redistributing a deployment that includes external SDKs.
