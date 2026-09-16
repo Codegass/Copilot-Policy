@@ -14,6 +14,7 @@ The implementation currently provides hardware adapters for two robot arm platfo
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
 [![Paper project](https://img.shields.io/badge/paper%20project-GPT--Policy-EA4C89)](https://github.com/cheng-haha/GPT-Policy-Eval)
+[![Paper PDF](https://img.shields.io/badge/Paper-PDF-red.svg?logo=readthedocs&logoColor=white)](https://cheng-haha.github.io/GPT-Policy/paper.pdf?v=20260915-repository-rename)
 
 **Paper:** [*In-Context Robot Learning with VLM Agents*](https://github.com/cheng-haha/GPT-Policy-Eval/blob/main/docs/GPT-Policy.pdf)  \
 **Authors:** Dongzhou Cheng, Taoran Yi, Ye Fang, Xingwu Zhang, Fan Feng, Yixuan Li, Gengxiong Zhuang, Rongze Wang, Shuai Yang, Wei Song, Weizhi Xue, Minyan Wu, Jie Gui, Jiaqi Wang, and Tong Wu.
@@ -21,7 +22,8 @@ The implementation currently provides hardware adapters for two robot arm platfo
 <details>
 <summary>Abstract</summary>
 
-Enabling robots to adapt to unfamiliar environments as readily as humans remains a moonshot goal of embodied AI. No finite collection of demonstrations can cover every task and situation a robot will encounter, making the ability to learn from context at deployment essential for generalization. Such in-context learning (ICL), however, remains largely beyond the reach of existing robotic policies. The broad agentic capabilities of commercial vision-language models (VLMs), such as GPT-6 Astra, raise a compelling question: can these models learn from demonstrations, examples, and interaction feedback, then translate that information into executable and verifiable robot behavior from a new initial state without gradient updates or persistent changes to task-specific parameters? We introduce GPT-Policy, a general-agent framework for in-context robot learning. GPT-Policy integrates a context compiler that preserves task-relevant visual transitions, a VLM that proposes robot-tool actions, and a constrained controller that verifies and executes each action and reports its outcome. We evaluate its reliability and limitations through task success and efficiency metrics, matched comparisons across models, and controlled context ablations. In real-robot trials, human video demonstrations improve task completion even without robot action labels, while aligned action references yield further gains on contact-sensitive tasks. These findings position GPT-Policy as a step toward robot adaptation through in-context learning, providing an empirical foundation for translating the general-purpose capabilities of VLMs into physical behavior and clarifying the challenges that must be overcome for reliable deployment.
+> Enabling robots to adapt to unfamiliar environments as readily as humans remains a moonshot goal of embodied AI. No finite collection of demonstrations can cover every task and situation a robot will encounter, making the ability to learn from context at deployment essential for generalization. Such in-context learning (ICL), however, remains largely beyond the reach of existing robotic policies. The broad agentic capabilities of commercial vision-language models (VLMs), such as GPT-6 Astra, raise a compelling question: can these models learn from demonstrations, examples, and interaction feedback, then translate that information into executable and verifiable robot behavior from a new initial state without gradient updates or persistent changes to task-specific parameters? We introduce GPT-Policy, a general-agent framework for in-context robot learning. GPT-Policy integrates a context compiler that preserves task-relevant visual transitions, a VLM that proposes robot-tool actions, and a constrained controller that verifies and executes each action and reports its outcome. We evaluate its reliability and limitations through task success and efficiency metrics, matched comparisons across models, and controlled context ablations. In real-robot trials, human video demonstrations improve task completion even without robot action labels, while aligned action references yield further gains on contact-sensitive tasks. These findings position GPT-Policy as a step toward robot adaptation through in-context learning, providing an empirical foundation for translating the general-purpose capabilities of VLMs into physical behavior and clarifying the challenges that must be overcome for reliable deployment.
+
 </details>
 
 ## News
@@ -120,9 +122,9 @@ Each motion is planned from fresh feedback, checked with per-sample IK, and reco
 
 ## Results from the paper
 
-<p>🎯 <b>Structured context:</b> 100% success across reported tasks.</p>
-<p>👀 <b>Human Video:</b> 0% → 67% on towel and notebook pickup.</p>
-<p>🤖 <b>Robot Video + Action:</b> 0% → 100% on bottle opening.</p>
+<p>🎯 <b>Target Image / Self History / Human–Robot Interaction:</b> 100% success on each of the six tasks evaluated under these conditions.</p>
+<p>👀 <b>Human Video:</b> Success rate improves from 0% to 67% on both towel and notebook pickup.</p>
+<p>🤖 <b>Robot Video + Action:</b> Success rate improves from 0% to 100% on bottle opening and from 0% to 67% on plug reinsertion.</p>
 
 ## Repository layout
 
@@ -148,9 +150,9 @@ python -m compileall -q src
 ## TODO
 
 - [x] Release the GPT-Policy pipeline for real-world ARX robots, including the complete harness and format adapters for different context types.
-- [ ] Release the GPT-Policy pipeline for YAM robots, including hardware integration, deployment configurations, and support for different context types.
-- [ ] Release the GPT-Policy simulation pipeline in RoboDojo, enabling reproducible task evaluation and systematic comparisons across different context settings.
-- [ ] Refine the agent harness to improve context construction, feedback-driven action planning, and execution efficiency throughout the closed-loop control process.
+- [ ] Release the YAM pipeline with hardware integration and flexible context support.
+- [ ] Release the RoboDojo simulation pipeline for reproducible evaluation.
+- [ ] Optimize the agent harness for context construction, feedback, and execution efficiency.
 
 ## Limitations and safety
 
