@@ -10,6 +10,8 @@
 
 This repository is the public implementation of GPT-Policy, a closed-loop control framework that connects a fixed vision-language model (VLM) to robot tools. At deployment time, the agent can use demonstrations, goal images, interaction history, and execution feedback without gradient updates or task-specific parameter changes.
 
+The implementation currently provides hardware adapters for two robot arm platforms: **ARX X5** and **I2RT/YAM**.
+
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
 [![Paper project](https://img.shields.io/badge/paper%20project-GPT--Policy-EA4C89)](https://github.com/cheng-haha/GPT-Policy-Eval)
 
@@ -145,12 +147,12 @@ python -m compileall -q src
 
 ## TODO
 
-- [ ] Add a dedicated safety layer for bimanual collision checking, separation monitoring, and interruption.
-- [ ] Make the execution harness contact-aware with slip detection, force limits, and local recovery.
-- [ ] Pair deliberative context reasoning with a fast controller for pose refinement and bimanual coordination.
-- [ ] Extend the agent to mobile manipulation with active perception, spatial memory, and base-arm coordination.
-- [ ] Study compositional context for long-horizon tasks and multi-demonstration subskill sequencing.
-- [ ] Adapt online to physical dynamics such as friction, compliance, and object response.
+- [ ] Broaden support for robot platforms and hardware interfaces.
+- [ ] Improve execution robustness, recovery behavior, and operational diagnostics.
+- [ ] Strengthen testing and reproducibility across supported configurations.
+- [ ] Improve documentation, examples, and the onboarding workflow.
+- [ ] Expand simulation and evaluation tooling for development without hardware.
+- [ ] Simplify deployment and maintenance of the agent and robot adapters.
 
 ## Limitations and safety
 
