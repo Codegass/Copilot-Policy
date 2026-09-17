@@ -73,7 +73,7 @@ def test_claude_selector_maps_to_claude_code_provider(tmp_path):
 
 def test_repository_main_and_agent_configs_resolve_together(tmp_path):
     configs = Path(__file__).resolve().parents[2] / "configs"
-    settings = json.loads((configs / "arx_gpt.json").read_text(encoding="utf-8"))
+    settings = json.loads((configs / "default.json").read_text(encoding="utf-8"))
     credentials = tmp_path / "credentials.json"
     save_claude_key("secret-key", credentials)
 

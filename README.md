@@ -12,12 +12,12 @@ This repository is the public implementation of GPT-Policy, a closed-loop contro
 
 The implementation currently provides hardware adapters for two robot arm platforms: **ARX X5** and **I2RT/YAM**.
 
-[![Paper project](https://img.shields.io/badge/paper%20project-GPT--Policy-EA4C89)](https://cheng-haha.github.io/GPT-Policy-Eval)
+[![Paper project](https://img.shields.io/badge/paper%20project-GPT--Policy-EA4C89)](https://cheng-haha.github.io/GPT-Policy/)
 [![ArXiv](https://img.shields.io/badge/arXiv-2609.19138-b31b1b.svg?logo=arxiv&logoColor=white)](https://arxiv.org/abs/2609.19138)
 [![Paper PDF](https://img.shields.io/badge/Paper-PDF-red.svg?logo=readthedocs&logoColor=white)](https://cheng-haha.github.io/GPT-Policy/paper.pdf?v=20260915-repository-rename)
 [![X](https://img.shields.io/badge/X-Post-000000?logo=x&logoColor=white)](https://x.com/z_code68632/status/2098397364725895387)
 
-**Paper:** [*In-Context Robot Learning with VLM Agents*](https://github.com/cheng-haha/GPT-Policy-Eval/blob/main/docs/GPT-Policy.pdf)  \
+**Paper:** [*In-Context Robot Learning with VLM Agents*](https://github.com/cheng-haha/GPT-Policy/blob/main/docs/GPT-Policy.pdf)  \
 **Authors:** Dongzhou Cheng, [Taoran Yi](https://taoranyi.com/), Ye Fang, Xingwu Zhang, Fan Feng, Yixuan Li, Gengxiong Zhuang, Rongze Wang, Shuai Yang, Wei Song, Weizhi Xue, Minyan Wu, Jie Gui, Jiaqi Wang, and Tong Wu.
 
 <details>
@@ -29,7 +29,7 @@ The implementation currently provides hardware adapters for two robot arm platfo
 
 ## News
 
-- 🚀 **[2026/09/16]** The [paper](https://cheng-haha.github.io/GPT-Policy/paper.pdf?v=20260915-repository-rename), [project page](https://cheng-haha.github.io/GPT-Policy/), and [code](https://github.com/cheng-haha/GPT-Policy-Eval) are now publicly available!
+- 🚀 **[2026/09/16]** The [paper](https://cheng-haha.github.io/GPT-Policy/paper.pdf?v=20260915-repository-rename), [project page](https://cheng-haha.github.io/GPT-Policy/), and [code](https://github.com/cheng-haha/GPT-Policy) are now publicly available!
 - 🎥 **[2026/09/11]** The first robot cases and [demonstrations](https://x.com/z_code68632/status/2098397364725895387) are added to the project page!
 
 ## Demos
@@ -50,7 +50,7 @@ Four synchronized views of three GPT-6 Astra robot runs. Click any preview to op
   <sub><b>Sprite retrieval</b> · search and place the bottle &nbsp;&nbsp;&nbsp;&nbsp; <b>Bottle opening</b> · unscrew and separate the cap</sub>
 </p>
 
-The [full experiment gallery](https://cheng-haha.github.io/GPT-Policy-Eval/#results) includes the other tasks and context comparisons.
+The [full experiment gallery](https://cheng-haha.github.io/GPT-Policy/#results) includes the other tasks and context comparisons.
 
 ## Method overview
 
@@ -92,14 +92,14 @@ Agent CLIs are external dependencies. Install and authenticate the provider you 
 
 ## Quick start
 
-For the default ARX profile, edit the placeholders in `configs/arx_gpt.json` once, then run a task directly:
+For the default ARX profile, edit the placeholders in `configs/default.json` once, then run a task directly:
 
 ```bash
 source .venv/bin/activate
 gpt-policy "pick up the red block"
 ```
 
-The command resolves `configs/arx_gpt.json` automatically. To validate the profile without opening hardware or a model session:
+The command resolves `configs/default.json` automatically. To validate the profile without opening hardware or a model session:
 
 ```bash
 gpt-policy --check
@@ -131,7 +131,7 @@ Each motion is planned from fresh feedback, checked with per-sample IK, and reco
 
 ```text
 src/gpt_policy/       protocol, input preparation, planning, recording, adapters
-configs/arx_gpt.json  default sanitized ARX profile for `gpt-policy "..."`
+configs/default.json  default sanitized ARX profile for `gpt-policy "..."`
 configs/agents/       provider examples
 configs/examples/     local-machine templates
 scripts/              opt-in driver installation
@@ -151,7 +151,7 @@ python -m compileall -q src
 ## TODO
 
 - [x] Release the GPT-Policy pipeline for real-world ARX robots, including the complete harness and format adapters for different context types.
-- [ ] Release the YAM pipeline with hardware integration and flexible context support.
+- [x] Release the YAM pipeline with hardware integration and flexible context support.
 - [ ] Release the RoboDojo simulation pipeline for reproducible evaluation.
 - [ ] Optimize the agent harness for context construction, feedback, and execution efficiency.
 

@@ -45,8 +45,8 @@ def settings_path(path: Path | None = None, machine: str | None = None) -> Path:
     selected = root / "configs" / "machine.local.json"
     if selected.exists():
         return selected.resolve()
-    local = root / "configs" / "arx_gpt.local.json"
-    return (local if local.exists() else root / "configs" / "arx_gpt.json").resolve()
+    local = root / "configs" / "default.local.json"
+    return (local if local.exists() else root / "configs" / "default.json").resolve()
 
 
 def load_settings(path: Path | None = None) -> dict[str, Any]:

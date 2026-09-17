@@ -1,6 +1,6 @@
 {
   "extends": "examples/arx-local.json",
-  "machine": "arx-local-default",
+  "machine": "default",
   "agent": "codex",
   "agent_config_dir": "agents",
   "tool_catalog": "tools.json",
