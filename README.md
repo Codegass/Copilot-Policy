@@ -15,6 +15,7 @@ The implementation currently provides hardware adapters for two robot arm platfo
 [![Paper project](https://img.shields.io/badge/paper%20project-GPT--Policy-EA4C89)](https://cheng-haha.github.io/GPT-Policy-Eval)
 [![ArXiv](https://img.shields.io/badge/arXiv-2609.19138-b31b1b.svg?logo=arxiv&logoColor=white)](https://arxiv.org/abs/2609.19138)
 [![Paper PDF](https://img.shields.io/badge/Paper-PDF-red.svg?logo=readthedocs&logoColor=white)](https://cheng-haha.github.io/GPT-Policy/paper.pdf?v=20260915-repository-rename)
+[![X](https://img.shields.io/badge/X-Post-000000?logo=x&logoColor=white)](https://x.com/z_code68632/status/2098397364725895387)
 
 **Paper:** [*In-Context Robot Learning with VLM Agents*](https://github.com/cheng-haha/GPT-Policy-Eval/blob/main/docs/GPT-Policy.pdf)  \
 **Authors:** Dongzhou Cheng, [Taoran Yi](https://taoranyi.com/), Ye Fang, Xingwu Zhang, Fan Feng, Yixuan Li, Gengxiong Zhuang, Rongze Wang, Shuai Yang, Wei Song, Weizhi Xue, Minyan Wu, Jie Gui, Jiaqi Wang, and Tong Wu.
