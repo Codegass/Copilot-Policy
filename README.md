@@ -12,8 +12,8 @@ This repository is the public implementation of GPT-Policy, a closed-loop contro
 
 The implementation currently provides hardware adapters for two robot arm platforms: **ARX X5** and **I2RT/YAM**.
 
-[![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
 [![Paper project](https://img.shields.io/badge/paper%20project-GPT--Policy-EA4C89)](https://cheng-haha.github.io/GPT-Policy-Eval)
+[![ArXiv](https://img.shields.io/badge/arXiv-2609.19138-b31b1b.svg?logo=arxiv&logoColor=white)](https://arxiv.org/abs/2609.19138)
 [![Paper PDF](https://img.shields.io/badge/Paper-PDF-red.svg?logo=readthedocs&logoColor=white)](https://cheng-haha.github.io/GPT-Policy/paper.pdf?v=20260915-repository-rename)
 
 **Paper:** [*In-Context Robot Learning with VLM Agents*](https://github.com/cheng-haha/GPT-Policy-Eval/blob/main/docs/GPT-Policy.pdf)  \
@@ -163,11 +163,11 @@ See [THIRD_PARTY.md](THIRD_PARTY.md) for third-party notices and optional SDK so
 ## Citation
 
 ```bibtex
-@misc{cheng2026gptpolicy,
-  title        = {In-Context Robot Learning with VLM Agents},
-  author       = {Cheng, Dongzhou and Yi, Taoran and Fang, Ye and Zhang, Xingwu and Feng, Fan and Li, Yixuan and Zhuang, Gengxiong and Wang, Rongze and Yang, Shuai and Song, Wei and Xue, Weizhi and Wu, Minyan and Gui, Jie and Wang, Jiaqi and Wu, Tong},
-  year         = {2026},
-  howpublished = {\url{https://github.com/cheng-haha/GPT-Policy-Eval}}
+@article{cheng2026incontextrobotlearningvlm,
+  title={In-Context Robot Learning with VLM Agents},
+  author={Dongzhou Cheng and Taoran Yi and Ye Fang and Xingwu Zhang and Fan Feng and Yixuan Li and Gengxiong Zhuang and Rongze Wang and Shuai Yang and Wei Song and Weizhi Xue and Minyan Wu and Jie Gui and Jiaqi Wang and Tong Wu},
+  journal={arxiv:2609.19138},
+  year={2026}
 }
 ```
 
