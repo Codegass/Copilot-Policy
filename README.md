@@ -143,6 +143,8 @@ The public tree excludes deployment hosts, private prompts, real credentials, ru
 
 ## Development
 
+For the planned subscription-based Copilot provider, see the [replacement design](docs/copilot-replacement-design.md) and [feasibility assessment](docs/copilot-migration-assessment.md).
+
 ```bash
 python -m pytest -q
 python -m compileall -q src
